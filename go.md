@@ -127,3 +127,12 @@ func (o ObsoleteVersionError) Error() string {
 	return fmt.Sprintf("task %d save obsolete version error: request version %d is older than db version %d", o.taskID, o.requestVersion, o.dbVersion)
 }
 ```
+
+### Web helpers
+
+Go has really strong support for JSON with `encoding/json`, and the ability to Marshal / Unmarshal json in and out of go structs.
+Go has the notion of _field tags_ which allow to give indication of the json key name, and options like `omitempty`
+
+Go is also good for rendering templates. You can render text ones with `text/template`, and escaped HTML ones with the `html/template` package.
+
+A templated string is between backquotes, and there is a whole syntax to inject variables, do for loops, etc.. Think jinja in python
